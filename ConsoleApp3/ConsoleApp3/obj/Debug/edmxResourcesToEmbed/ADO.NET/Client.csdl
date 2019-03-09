@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="exerciceLocationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="exerciceLocationEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CATEGORIE" EntityType="exerciceLocationModel.CATEGORIE" />
+    <EntitySet Name="Client" EntityType="exerciceLocationModel.Client" />
+    <EntitySet Name="LOUE" EntityType="exerciceLocationModel.LOUE" />
+    <EntitySet Name="Marque" EntityType="exerciceLocationModel.Marque" />
+    <EntitySet Name="VEHICULE" EntityType="exerciceLocationModel.VEHICULE" />
+    <AssociationSet Name="FK__VEHICULE__CATEGO__6754599E" Association="exerciceLocationModel.FK__VEHICULE__CATEGO__6754599E">
+      <End Role="CATEGORIE" EntitySet="CATEGORIE" />
+      <End Role="VEHICULE" EntitySet="VEHICULE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LOUE__CLIENT__06CD04F7" Association="exerciceLocationModel.FK__LOUE__CLIENT__06CD04F7">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="LOUE" EntitySet="LOUE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LOUE__VEHICULE__07C12930" Association="exerciceLocationModel.FK__LOUE__VEHICULE__07C12930">
+      <End Role="VEHICULE" EntitySet="VEHICULE" />
+      <End Role="LOUE" EntitySet="LOUE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VEHICULE__MARQUE__66603565" Association="exerciceLocationModel.FK__VEHICULE__MARQUE__66603565">
+      <End Role="Marque" EntitySet="Marque" />
+      <End Role="VEHICULE" EntitySet="VEHICULE" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CATEGORIE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LIBELLE" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PRIX_KM" Type="Decimal" Nullable="false" Precision="4" Scale="2" />
+    <NavigationProperty Name="VEHICULE" Relationship="exerciceLocationModel.FK__VEHICULE__CATEGO__6754599E" FromRole="CATEGORIE" ToRole="VEHICULE" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="prenom" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date_naissance" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="adresse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="code_postal" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ville" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="LOUE" Relationship="exerciceLocationModel.FK__LOUE__CLIENT__06CD04F7" FromRole="Client" ToRole="LOUE" />
+  </EntityType>
+  <EntityType Name="LOUE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="NB_KM" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="DATE_DEBUT" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DATE_FIN" Type="DateTime" Precision="0" />
+    <Property Name="CLIENT" Type="Int32" />
+    <Property Name="VEHICULE" Type="Int32" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Client1" Relationship="exerciceLocationModel.FK__LOUE__CLIENT__06CD04F7" FromRole="LOUE" ToRole="Client" />
+    <NavigationProperty Name="VEHICULE1" Relationship="exerciceLocationModel.FK__LOUE__VEHICULE__07C12930" FromRole="LOUE" ToRole="VEHICULE" />
+  </EntityType>
+  <EntityType Name="Marque">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="VEHICULE" Relationship="exerciceLocationModel.FK__VEHICULE__MARQUE__66603565" FromRole="Marque" ToRole="VEHICULE" />
+  </EntityType>
+  <EntityType Name="VEHICULE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IMMATRICULATION" Type="String" Nullable="false" MaxLength="17" FixedLength="false" Unicode="false" />
+    <Property Name="COULEUR" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DATE_MISE_EN_SERVICE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="MARQUE" Type="Int32" />
+    <Property Name="CATEGORIE" Type="Int32" />
+    <NavigationProperty Name="CATEGORIE1" Relationship="exerciceLocationModel.FK__VEHICULE__CATEGO__6754599E" FromRole="VEHICULE" ToRole="CATEGORIE" />
+    <NavigationProperty Name="LOUE" Relationship="exerciceLocationModel.FK__LOUE__VEHICULE__07C12930" FromRole="VEHICULE" ToRole="LOUE" />
+    <NavigationProperty Name="Marque1" Relationship="exerciceLocationModel.FK__VEHICULE__MARQUE__66603565" FromRole="VEHICULE" ToRole="Marque" />
+  </EntityType>
+  <Association Name="FK__VEHICULE__CATEGO__6754599E">
+    <End Type="exerciceLocationModel.CATEGORIE" Role="CATEGORIE" Multiplicity="0..1" />
+    <End Type="exerciceLocationModel.VEHICULE" Role="VEHICULE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CATEGORIE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VEHICULE">
+        <PropertyRef Name="CATEGORIE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LOUE__CLIENT__06CD04F7">
+    <End Type="exerciceLocationModel.Client" Role="Client" Multiplicity="0..1" />
+    <End Type="exerciceLocationModel.LOUE" Role="LOUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LOUE">
+        <PropertyRef Name="CLIENT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LOUE__VEHICULE__07C12930">
+    <End Type="exerciceLocationModel.VEHICULE" Role="VEHICULE" Multiplicity="0..1" />
+    <End Type="exerciceLocationModel.LOUE" Role="LOUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VEHICULE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LOUE">
+        <PropertyRef Name="VEHICULE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VEHICULE__MARQUE__66603565">
+    <End Type="exerciceLocationModel.Marque" Role="Marque" Multiplicity="0..1" />
+    <End Type="exerciceLocationModel.VEHICULE" Role="VEHICULE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marque">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VEHICULE">
+        <PropertyRef Name="MARQUE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

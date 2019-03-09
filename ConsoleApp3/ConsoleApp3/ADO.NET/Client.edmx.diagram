@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fc2a6a216fa34dcabdc865627e88f8b0" Name="Diagram1">
+        <EntityTypeShape EntityType="exerciceLocationModel.CATEGORIE" Width="1.5" PointX="0.75" PointY="5.5" />
+        <EntityTypeShape EntityType="exerciceLocationModel.Client" Width="1.5" PointX="3" PointY="5" />
+        <EntityTypeShape EntityType="exerciceLocationModel.LOUE" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="exerciceLocationModel.Marque" Width="1.5" PointX="0.75" PointY="1.5" />
+        <EntityTypeShape EntityType="exerciceLocationModel.VEHICULE" Width="1.5" PointX="3" PointY="1" />
+        <AssociationConnector Association="exerciceLocationModel.FK__VEHICULE__CATEGO__6754599E" />
+        <AssociationConnector Association="exerciceLocationModel.FK__LOUE__CLIENT__06CD04F7" />
+        <AssociationConnector Association="exerciceLocationModel.FK__LOUE__VEHICULE__07C12930" />
+        <AssociationConnector Association="exerciceLocationModel.FK__VEHICULE__MARQUE__66603565" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

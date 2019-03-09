@@ -1,0 +1,6 @@
+C:\Users\formation\source\repos\ConsoleApp2\Models\bin\Debug\Models.dll
+C:\Users\formation\source\repos\ConsoleApp2\Models\bin\Debug\Models.pdb
+C:\Users\formation\source\repos\ConsoleApp2\Models\obj\Debug\Models.csprojAssemblyReference.cache
+C:\Users\formation\source\repos\ConsoleApp2\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+C:\Users\formation\source\repos\ConsoleApp2\Models\obj\Debug\Models.dll
+C:\Users\formation\source\repos\ConsoleApp2\Models\obj\Debug\Models.pdb

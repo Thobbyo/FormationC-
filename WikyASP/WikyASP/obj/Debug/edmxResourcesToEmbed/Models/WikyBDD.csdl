@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="wikyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ARTICLE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="theme" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="auteur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="contenue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="COMMENTAIRE" Relationship="Self.FK__COMMENTAI__artic__45F365D3" FromRole="ARTICLE" ToRole="COMMENTAIRE" />
+  </EntityType>
+  <EntityType Name="COMMENTAIRE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="auteur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="contenue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="article" Type="Int32" />
+    <NavigationProperty Name="ARTICLE1" Relationship="Self.FK__COMMENTAI__artic__45F365D3" FromRole="COMMENTAIRE" ToRole="ARTICLE" />
+  </EntityType>
+  <Association Name="FK__COMMENTAI__artic__45F365D3">
+    <End Role="ARTICLE" Type="Self.ARTICLE" Multiplicity="0..1" />
+    <End Role="COMMENTAIRE" Type="Self.COMMENTAIRE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ARTICLE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="COMMENTAIRE">
+        <PropertyRef Name="article" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="wikyEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ARTICLE" EntityType="Self.ARTICLE" />
+    <EntitySet Name="COMMENTAIRE" EntityType="Self.COMMENTAIRE" />
+    <AssociationSet Name="FK__COMMENTAI__artic__45F365D3" Association="Self.FK__COMMENTAI__artic__45F365D3">
+      <End Role="ARTICLE" EntitySet="ARTICLE" />
+      <End Role="COMMENTAIRE" EntitySet="COMMENTAIRE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

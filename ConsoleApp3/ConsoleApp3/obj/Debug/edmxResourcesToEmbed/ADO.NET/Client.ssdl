@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="exerciceLocationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CATEGORIE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LIBELLE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="PRIX_KM" Type="numeric" Precision="4" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="prenom" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date_naissance" Type="date" Nullable="false" />
+    <Property Name="adresse" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="code_postal" Type="varchar" MaxLength="10" />
+    <Property Name="ville" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LOUE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="NB_KM" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="DATE_DEBUT" Type="date" Nullable="false" />
+    <Property Name="DATE_FIN" Type="date" />
+    <Property Name="CLIENT" Type="int" />
+    <Property Name="VEHICULE" Type="int" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Marque">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VEHICULE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IMMATRICULATION" Type="varchar" MaxLength="17" Nullable="false" />
+    <Property Name="COULEUR" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="DATE_MISE_EN_SERVICE" Type="date" Nullable="false" />
+    <Property Name="MARQUE" Type="int" />
+    <Property Name="CATEGORIE" Type="int" />
+  </EntityType>
+  <Association Name="FK__LOUE__CLIENT__06CD04F7">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="LOUE" Type="Self.LOUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LOUE">
+        <PropertyRef Name="CLIENT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LOUE__VEHICULE__07C12930">
+    <End Role="VEHICULE" Type="Self.VEHICULE" Multiplicity="0..1" />
+    <End Role="LOUE" Type="Self.LOUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VEHICULE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LOUE">
+        <PropertyRef Name="VEHICULE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VEHICULE__CATEGO__6754599E">
+    <End Role="CATEGORIE" Type="Self.CATEGORIE" Multiplicity="0..1" />
+    <End Role="VEHICULE" Type="Self.VEHICULE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CATEGORIE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VEHICULE">
+        <PropertyRef Name="CATEGORIE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VEHICULE__MARQUE__66603565">
+    <End Role="Marque" Type="Self.Marque" Multiplicity="0..1" />
+    <End Role="VEHICULE" Type="Self.VEHICULE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marque">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VEHICULE">
+        <PropertyRef Name="MARQUE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="exerciceLocationModelStoreContainer">
+    <EntitySet Name="CATEGORIE" EntityType="Self.CATEGORIE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOUE" EntityType="Self.LOUE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Marque" EntityType="Self.Marque" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VEHICULE" EntityType="Self.VEHICULE" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__LOUE__CLIENT__06CD04F7" Association="Self.FK__LOUE__CLIENT__06CD04F7">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="LOUE" EntitySet="LOUE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LOUE__VEHICULE__07C12930" Association="Self.FK__LOUE__VEHICULE__07C12930">
+      <End Role="VEHICULE" EntitySet="VEHICULE" />
+      <End Role="LOUE" EntitySet="LOUE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VEHICULE__CATEGO__6754599E" Association="Self.FK__VEHICULE__CATEGO__6754599E">
+      <End Role="CATEGORIE" EntitySet="CATEGORIE" />
+      <End Role="VEHICULE" EntitySet="VEHICULE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VEHICULE__MARQUE__66603565" Association="Self.FK__VEHICULE__MARQUE__66603565">
+      <End Role="Marque" EntitySet="Marque" />
+      <End Role="VEHICULE" EntitySet="VEHICULE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

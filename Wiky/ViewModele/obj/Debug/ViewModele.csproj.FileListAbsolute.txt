@@ -1,0 +1,17 @@
+C:\Users\formation\source\repos\Wiky\ViewModele\bin\Debug\ViewModele.dll.config
+C:\Users\formation\source\repos\Wiky\ViewModele\bin\Debug\ViewModele.dll
+C:\Users\formation\source\repos\Wiky\ViewModele\bin\Debug\ViewModele.pdb
+C:\Users\formation\source\repos\Wiky\ViewModele\bin\Debug\EntityFramework.dll
+C:\Users\formation\source\repos\Wiky\ViewModele\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\formation\source\repos\Wiky\ViewModele\bin\Debug\Modele.dll
+C:\Users\formation\source\repos\Wiky\ViewModele\bin\Debug\Modele.pdb
+C:\Users\formation\source\repos\Wiky\ViewModele\bin\Debug\Modele.dll.config
+C:\Users\formation\source\repos\Wiky\ViewModele\bin\Debug\EntityFramework.xml
+C:\Users\formation\source\repos\Wiky\ViewModele\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\formation\source\repos\Wiky\ViewModele\obj\Debug\ViewModele.csprojAssemblyReference.cache
+C:\Users\formation\source\repos\Wiky\ViewModele\obj\Debug\ViewModele.Properties.Resources.resources
+C:\Users\formation\source\repos\Wiky\ViewModele\obj\Debug\ViewModele.csproj.GenerateResource.cache
+C:\Users\formation\source\repos\Wiky\ViewModele\obj\Debug\ViewModele.csproj.CoreCompileInputs.cache
+C:\Users\formation\source\repos\Wiky\ViewModele\obj\Debug\ViewModele.csproj.CopyComplete
+C:\Users\formation\source\repos\Wiky\ViewModele\obj\Debug\ViewModele.dll
+C:\Users\formation\source\repos\Wiky\ViewModele\obj\Debug\ViewModele.pdb

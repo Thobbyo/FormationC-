@@ -1,0 +1,15 @@
+﻿@model WikyASPAuth.Models.ARTICLE
+@{
+    ViewBag.Title = "DisplayModifierArticle";
+}
+
+<h2>ModifierArticle</h2>
+@using (Html.BeginForm("ModifierArticle", null))
+{
+    @Html.AntiForgeryToken()
+    <p>@Html.LabelFor(m => m.auteur) @Html.TextBoxFor(m => m.auteur)</p>
+    <p>@Html.LabelFor(m => m.theme) @Html.TextBoxFor(m => m.theme)</p>
+    <p>@Html.LabelFor(m => m.contenue) @Html.TextAreaFor(m => m.contenue)</p>
+    @Html.HiddenFor(m => m.id)
+    <p><input type="submit" value="Valider" /></p>
+}

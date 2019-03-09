@@ -1,0 +1,10 @@
+C:\Users\formation\source\repos\ProjetFinal\ProjetFinal\bin\Debug\ProjetFinal.exe.config
+C:\Users\formation\source\repos\ProjetFinal\ProjetFinal\bin\Debug\ProjetFinal.exe
+C:\Users\formation\source\repos\ProjetFinal\ProjetFinal\bin\Debug\ProjetFinal.pdb
+C:\Users\formation\source\repos\ProjetFinal\ProjetFinal\obj\Debug\ProjetFinal.csprojAssemblyReference.cache
+C:\Users\formation\source\repos\ProjetFinal\ProjetFinal\obj\Debug\ProjetFinal.csproj.CoreCompileInputs.cache
+C:\Users\formation\source\repos\ProjetFinal\ProjetFinal\obj\Debug\ProjetFinal.exe
+C:\Users\formation\source\repos\ProjetFinal\ProjetFinal\obj\Debug\ProjetFinal.pdb
+C:\Users\formation\source\repos\ProjetFinal\ProjetFinal\bin\Debug\ProjetFinalDll.dll
+C:\Users\formation\source\repos\ProjetFinal\ProjetFinal\bin\Debug\ProjetFinalDll.pdb
+C:\Users\formation\source\repos\ProjetFinal\ProjetFinal\obj\Debug\ProjetFinal.csproj.CopyComplete

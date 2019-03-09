@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="wikyModelStoreContainer" CdmEntityContainer="wikyEntities">
+    <EntitySetMapping Name="ARTICLE">
+      <EntityTypeMapping TypeName="wikyModel.ARTICLE">
+        <MappingFragment StoreEntitySet="ARTICLE">
+          <ScalarProperty Name="utilisateur" ColumnName="utilisateur" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="theme" ColumnName="theme" />
+          <ScalarProperty Name="auteur" ColumnName="auteur" />
+          <ScalarProperty Name="contenue" ColumnName="contenue" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="image" ColumnName="image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMMENTAIRE">
+      <EntityTypeMapping TypeName="wikyModel.COMMENTAIRE">
+        <MappingFragment StoreEntitySet="COMMENTAIRE">
+          <ScalarProperty Name="utilisateur" ColumnName="utilisateur" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="auteur" ColumnName="auteur" />
+          <ScalarProperty Name="contenue" ColumnName="contenue" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="article" ColumnName="article" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERSONNE">
+      <EntityTypeMapping TypeName="wikyModel.PERSONNE">
+        <MappingFragment StoreEntitySet="PERSONNE">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

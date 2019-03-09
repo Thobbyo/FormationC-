@@ -1,0 +1,6 @@
+C:\Users\formation\source\repos\ProjetFinal\ClassLibrary1\obj\Debug\ProjetFinalDll.csprojAssemblyReference.cache
+C:\Users\formation\source\repos\ProjetFinal\ClassLibrary1\obj\Debug\ProjetFinalDll.csproj.CoreCompileInputs.cache
+C:\Users\formation\source\repos\ProjetFinal\ClassLibrary1\bin\Debug\ProjetFinalDll.dll
+C:\Users\formation\source\repos\ProjetFinal\ClassLibrary1\bin\Debug\ProjetFinalDll.pdb
+C:\Users\formation\source\repos\ProjetFinal\ClassLibrary1\obj\Debug\ProjetFinalDll.dll
+C:\Users\formation\source\repos\ProjetFinal\ClassLibrary1\obj\Debug\ProjetFinalDll.pdb

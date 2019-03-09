@@ -1,0 +1,7 @@
+﻿@model List<WikyASP.Models.COMMENTAIRE>
+<div>
+    @foreach (var comm in Model)
+    {
+        @Html.Partial("_commentaire", comm)
+    }
+</div>

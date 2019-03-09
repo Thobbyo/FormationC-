@@ -1,0 +1,50 @@
+﻿@model  WebApplication1.Models.Message
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Affichage", null))
+        {
+            <div> @Html.LabelFor(m => m.Emetteur) @Html.EditorFor(m => m.Emetteur)</div>
+            <div> @Html.LabelFor(m => m.Contenu) @Html.EditorFor(m => m.Contenu)</div>
+            <div> @Html.LabelFor(m => m.Date) @Html.EditorFor(m => m.Date)</div>
+            <div><input type="submit" value="Valider" /></div>
+        }
+    </div>
+    <div>
+        @using (Html.BeginForm("AffichageStrList", null))
+        {
+            <label>value 1</label>
+            <input type="text" name="vals" value="" />
+            <br />
+            <label>value 2</label>
+            <input type="text" name="vals" value="" />
+            <br />
+            <input type="submit" value="Envoyer" />
+        }
+    </div>
+    <div>
+        @using (Html.BeginForm("AffichageMsgList", null))
+        {
+            int i = 0;
+            for (i = 0; i < 2; i++)
+            {
+                <div>
+                    Message @i
+                    <div> Emetteur : <input type="text" name="msg[@i].Emetteur" /></div>
+                    <div> Contenu : <input type="text" name="msg[@i].Contenu" /></div>
+                    <div> Date : <input type="date" name="msg[@i].Date" /></div>
+                </div>
+            }
+            <div><input type="submit" value="Valider" /></div>
+        }
+    </div>
+    @Html.ActionLink("Action avec paramètre", "AffichageGetMsg", "Home", new { emeteur = "10pont", contenue = "Le messages est très long", date = DateTime.Now }, null)
+</body>
+</html>

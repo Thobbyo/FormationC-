@@ -1,0 +1,9 @@
+﻿@model List<WebApplication1.Models.Message>
+
+<h2>AffichageMsgList</h2>
+<div>
+    @foreach (WebApplication1.Models.Message msg in Model)
+    {
+        <p>@msg.Contenu</p>
+    }
+</div>

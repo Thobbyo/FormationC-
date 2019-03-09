@@ -1,0 +1,17 @@
+﻿@model WikyASP.Models.ARTICLE
+
+<div class="jumbotron">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            @Model.theme
+            <div class="panel-heading">
+                <small>
+                    @Model.auteur le @Model.date
+                </small>
+            </div>
+        </div>
+        <div class="panel-body">
+            @Model.contenue
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+C:\Users\formation\source\repos\AspectAvancer\AspectAvancer\bin\Debug\AspectAvancer.exe.config
+C:\Users\formation\source\repos\AspectAvancer\AspectAvancer\bin\Debug\AspectAvancer.exe
+C:\Users\formation\source\repos\AspectAvancer\AspectAvancer\bin\Debug\AspectAvancer.pdb
+C:\Users\formation\source\repos\AspectAvancer\AspectAvancer\obj\Debug\AspectAvancer.csprojAssemblyReference.cache
+C:\Users\formation\source\repos\AspectAvancer\AspectAvancer\obj\Debug\AspectAvancer.csproj.CoreCompileInputs.cache
+C:\Users\formation\source\repos\AspectAvancer\AspectAvancer\obj\Debug\AspectAvancer.exe
+C:\Users\formation\source\repos\AspectAvancer\AspectAvancer\obj\Debug\AspectAvancer.pdb

@@ -1,0 +1,35 @@
+﻿@model WikyASPAuth.Models.ARTICLE
+@{
+    ViewBag.Title = "DisplayArticle";
+    WikyASPAuth.Models.COMMENTAIRE comm = new WikyASPAuth.Models.COMMENTAIRE();
+    comm.article = Model.id;
+}
+
+<h2>DisplayArticle</h2>
+<div>
+    @Html.Partial("_article", Model)
+    @if(User.Identity.GetUserId() == Model.utilisateur)
+    {
+        <div class="row">
+            <div>
+                @Html.ActionLink("Modifier", "DisplayModifierArticle", "Article", new { art = Model.id }, null)
+                @Html.ActionLink("Supprimer", "SupprimerArticle", "Article", new { art = Model.id }, null)
+            </div>
+        </div>
+    }
+</div>
+<div>
+    @if (Request.IsAuthenticated)
+    {
+        
+        @Html.Partial("_createCommentaire", comm)
+
+    }
+    else
+    {
+        @WikyASPAuth.Languages.Lang.ForCreatComCreatCount
+    }
+</div>
+<div id="commentaireList">
+    @Html.Partial("_commentaireList", Model.COMMENTAIRE.ToList())
+</div>

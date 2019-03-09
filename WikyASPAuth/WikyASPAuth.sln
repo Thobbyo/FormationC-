@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WikyASPAuth", "WikyASPAuth\WikyASPAuth.csproj", "{612505D7-8BF6-4A76-A58B-E697B6BC407D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{612505D7-8BF6-4A76-A58B-E697B6BC407D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{612505D7-8BF6-4A76-A58B-E697B6BC407D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{612505D7-8BF6-4A76-A58B-E697B6BC407D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{612505D7-8BF6-4A76-A58B-E697B6BC407D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A08A252E-B68E-4ED8-97A8-291BE4E84411}
+	EndGlobalSection
+EndGlobal

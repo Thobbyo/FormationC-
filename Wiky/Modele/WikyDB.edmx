@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="wikyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ARTICLE">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="theme" Type="nvarchar" MaxLength="50" />
+          <Property Name="auteur" Type="nvarchar" MaxLength="50" />
+          <Property Name="contenue" Type="nvarchar(max)" />
+          <Property Name="date" Type="date" />
+          <Property Name="image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="COMMENTAIRE">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="auteur" Type="nvarchar" MaxLength="50" />
+          <Property Name="contenue" Type="nvarchar(max)" />
+          <Property Name="date" Type="date" />
+          <Property Name="article" Type="int" />
+        </EntityType>
+        <Association Name="FK__COMMENTAI__artic__45F365D3">
+          <End Role="ARTICLE" Type="Self.ARTICLE" Multiplicity="0..1" />
+          <End Role="COMMENTAIRE" Type="Self.COMMENTAIRE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ARTICLE">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="COMMENTAIRE">
+              <PropertyRef Name="article" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="wikyModelStoreContainer">
+          <EntitySet Name="ARTICLE" EntityType="Self.ARTICLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COMMENTAIRE" EntityType="Self.COMMENTAIRE" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__COMMENTAI__artic__45F365D3" Association="Self.FK__COMMENTAI__artic__45F365D3">
+            <End Role="ARTICLE" EntitySet="ARTICLE" />
+            <End Role="COMMENTAIRE" EntitySet="COMMENTAIRE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="wikyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="wikyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ARTICLE" EntityType="wikyModel.ARTICLE" />
+          <EntitySet Name="COMMENTAIRE" EntityType="wikyModel.COMMENTAIRE" />
+          <AssociationSet Name="FK__COMMENTAI__artic__412EB0B6" Association="wikyModel.FK__COMMENTAI__artic__412EB0B6">
+            <End Role="ARTICLE" EntitySet="ARTICLE" />
+            <End Role="COMMENTAIRE" EntitySet="COMMENTAIRE" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ARTICLE">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="theme" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="auteur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contenue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="COMMENTAIRE" Relationship="wikyModel.FK__COMMENTAI__artic__412EB0B6" FromRole="ARTICLE" ToRole="COMMENTAIRE" />
+        </EntityType>
+        <EntityType Name="COMMENTAIRE">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="auteur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contenue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="article" Type="Int32" />
+          <NavigationProperty Name="ARTICLE1" Relationship="wikyModel.FK__COMMENTAI__artic__412EB0B6" FromRole="COMMENTAIRE" ToRole="ARTICLE" />
+        </EntityType>
+        <Association Name="FK__COMMENTAI__artic__412EB0B6">
+          <End Type="wikyModel.ARTICLE" Role="ARTICLE" Multiplicity="0..1" />
+          <End Type="wikyModel.COMMENTAIRE" Role="COMMENTAIRE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ARTICLE">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="COMMENTAIRE">
+              <PropertyRef Name="article" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="wikyModelStoreContainer" CdmEntityContainer="wikyEntities">
+          <EntitySetMapping Name="ARTICLE">
+            <EntityTypeMapping TypeName="wikyModel.ARTICLE">
+              <MappingFragment StoreEntitySet="ARTICLE">
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="contenue" ColumnName="contenue" />
+                <ScalarProperty Name="auteur" ColumnName="auteur" />
+                <ScalarProperty Name="theme" ColumnName="theme" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COMMENTAIRE">
+            <EntityTypeMapping TypeName="wikyModel.COMMENTAIRE">
+              <MappingFragment StoreEntitySet="COMMENTAIRE">
+                <ScalarProperty Name="article" ColumnName="article" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="contenue" ColumnName="contenue" />
+                <ScalarProperty Name="auteur" ColumnName="auteur" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

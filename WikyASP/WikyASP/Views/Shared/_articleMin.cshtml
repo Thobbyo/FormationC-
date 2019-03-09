@@ -1,0 +1,8 @@
+﻿@model WikyASP.Models.ARTICLE
+
+<div class="jumbotron">
+    <div class="">@Model.auteur</div>
+    <div class="">@Model.theme</div>
+    <div class="">@Model.date</div>
+    <div class="">@Html.ActionLink("Détail", "DisplayArticle", "Article", new { art = Model.id }, null)</div>
+</div>

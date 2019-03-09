@@ -1,0 +1,14 @@
+﻿@model WikyASP.Models.COMMENTAIRE
+<div>
+    @using (Ajax.BeginForm("ajouterCommentaire", "Commentaire", new AjaxOptions
+    {
+        UpdateTargetId = "commentaireList",
+        OnComplete = "this.reset()"
+    }))
+    {
+        <p>@Html.LabelFor(m => m.auteur) @Html.EditorFor(m => m.auteur) @Html.ValidationMessageFor(m => m.auteur)</p>
+        <p>@Html.LabelFor(m => m.contenue) @Html.EditorFor(m => m.contenue) @Html.ValidationMessageFor(m => m.contenue)</p>
+        @Html.HiddenFor(m => m.article)
+        <input type="submit" value="Commenter" />
+    }
+</div>

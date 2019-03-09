@@ -1,0 +1,15 @@
+C:\Users\formation\source\repos\ConsoleApp2\Controllers\obj\Debug\Controllers.csprojAssemblyReference.cache
+C:\Users\formation\source\repos\ConsoleApp2\Controllers\obj\Debug\Controllers.csproj.CoreCompileInputs.cache
+C:\Users\formation\source\repos\ConsoleApp2\Controllers\bin\Debug\Controllers.dll
+C:\Users\formation\source\repos\ConsoleApp2\Controllers\bin\Debug\Controllers.pdb
+C:\Users\formation\source\repos\ConsoleApp2\Controllers\bin\Debug\Models.dll
+C:\Users\formation\source\repos\ConsoleApp2\Controllers\bin\Debug\Models.pdb
+C:\Users\formation\source\repos\ConsoleApp2\Controllers\obj\Debug\Controllers.csproj.CopyComplete
+C:\Users\formation\source\repos\ConsoleApp2\Controllers\obj\Debug\Controllers.dll
+C:\Users\formation\source\repos\ConsoleApp2\Controllers\obj\Debug\Controllers.pdb
+C:\Users\formation\source\repos\ConsoleApp2\Controllers\bin\Debug\Business.dll
+C:\Users\formation\source\repos\ConsoleApp2\Controllers\bin\Debug\Entities.dll
+C:\Users\formation\source\repos\ConsoleApp2\Controllers\bin\Debug\Repository.dll
+C:\Users\formation\source\repos\ConsoleApp2\Controllers\bin\Debug\Business.pdb
+C:\Users\formation\source\repos\ConsoleApp2\Controllers\bin\Debug\Entities.pdb
+C:\Users\formation\source\repos\ConsoleApp2\Controllers\bin\Debug\Repository.pdb

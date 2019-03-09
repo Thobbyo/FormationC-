@@ -1,0 +1,23 @@
+﻿@model WikyASP.Models.ARTICLE
+@{
+    ViewBag.Title = "DisplayArticle";
+    WikyASP.Models.COMMENTAIRE comm = new WikyASP.Models.COMMENTAIRE();
+    comm.article = Model.id;
+}
+
+<h2>DisplayArticle</h2>
+<div>
+    @Html.Partial("_article", Model)
+    <div class="row">
+        <div>
+            @Html.ActionLink("Modifier", "DisplayModifierArticle", "Article", new { art = Model.id }, null)
+            @Html.ActionLink("Supprimer", "SupprimerArticle", "Article", new { art = Model.id }, null)
+        </div>
+    </div>
+</div>
+<div>
+    @Html.Partial("_createCommentaire", comm)
+</div>
+<div id="commentaireList">
+    @Html.Partial("_commentaireList", Model.COMMENTAIRE.ToList())
+</div>

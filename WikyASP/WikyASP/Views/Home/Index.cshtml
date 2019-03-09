@@ -1,0 +1,13 @@
+﻿@model WikyASP.Models.ARTICLE
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Wiky</h1>
+    <p class="lead">Article le plus récent</p>
+</div>
+
+<div class="row">
+    @Html.Partial("_article", Model)
+</div>

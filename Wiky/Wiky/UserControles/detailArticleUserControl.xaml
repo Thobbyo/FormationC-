@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Wiky.UserControles.detailArticleUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Wiky.UserControles"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Right">
+                <TextBlock Text="{Binding auteurArticle}"></TextBlock>
+                <TextBlock Text="{Binding dateArticle}"></TextBlock>
+                <TextBlock Text="{Binding sujetArticle}"></TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <Button Command="{Binding addArticleCommande}">Modifier</Button>
+                    <Button Command="{Binding SupressionArticleCommande}">Supprimer</Button>
+                </StackPanel>
+            </StackPanel>
+            <TextBlock DockPanel.Dock="Top" Text="{Binding contentArticle}"></TextBlock>
+            <ListBox DockPanel.Dock="Bottom" ItemsSource="{Binding listCommentaire}"></ListBox>
+        </DockPanel>
+    </Grid>
+</UserControl>

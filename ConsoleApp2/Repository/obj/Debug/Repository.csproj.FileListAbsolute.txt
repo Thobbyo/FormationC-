@@ -1,0 +1,9 @@
+C:\Users\formation\source\repos\ConsoleApp2\Repository\bin\Debug\Repository.dll
+C:\Users\formation\source\repos\ConsoleApp2\Repository\bin\Debug\Repository.pdb
+C:\Users\formation\source\repos\ConsoleApp2\Repository\bin\Debug\Entities.dll
+C:\Users\formation\source\repos\ConsoleApp2\Repository\bin\Debug\Entities.pdb
+C:\Users\formation\source\repos\ConsoleApp2\Repository\obj\Debug\Repository.csprojAssemblyReference.cache
+C:\Users\formation\source\repos\ConsoleApp2\Repository\obj\Debug\Repository.csproj.CoreCompileInputs.cache
+C:\Users\formation\source\repos\ConsoleApp2\Repository\obj\Debug\Repository.csproj.CopyComplete
+C:\Users\formation\source\repos\ConsoleApp2\Repository\obj\Debug\Repository.dll
+C:\Users\formation\source\repos\ConsoleApp2\Repository\obj\Debug\Repository.pdb

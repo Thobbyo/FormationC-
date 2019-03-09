@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="wikyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ARTICLE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="theme" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="auteur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="contenue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="COMMENTAIRE" Relationship="Self.FK__COMMENTAI__artic__45F365D3" FromRole="ARTICLE" ToRole="COMMENTAIRE" />
+    <Property Name="utilisateur" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PERSONNE" Relationship="wikyModel.FK_ARTICLE_PERSONNE" FromRole="ARTICLE" ToRole="PERSONNE" />
+  </EntityType>
+  <EntityType Name="COMMENTAIRE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="auteur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="contenue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="article" Type="Int32" />
+    <NavigationProperty Name="ARTICLE1" Relationship="Self.FK__COMMENTAI__artic__45F365D3" FromRole="COMMENTAIRE" ToRole="ARTICLE" />
+    <Property Name="utilisateur" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PERSONNE" Relationship="wikyModel.FK_COMMENTAIRE_COMMENTAIRE" FromRole="COMMENTAIRE" ToRole="PERSONNE" />
+  </EntityType>
+  <Association Name="FK__COMMENTAI__artic__45F365D3">
+    <End Role="ARTICLE" Type="Self.ARTICLE" Multiplicity="0..1" />
+    <End Role="COMMENTAIRE" Type="Self.COMMENTAIRE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ARTICLE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="COMMENTAIRE">
+        <PropertyRef Name="article" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="wikyEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ARTICLE" EntityType="Self.ARTICLE" />
+    <EntitySet Name="COMMENTAIRE" EntityType="Self.COMMENTAIRE" />
+    <AssociationSet Name="FK__COMMENTAI__artic__45F365D3" Association="Self.FK__COMMENTAI__artic__45F365D3">
+      <End Role="ARTICLE" EntitySet="ARTICLE" />
+      <End Role="COMMENTAIRE" EntitySet="COMMENTAIRE" />
+    </AssociationSet>
+    <EntitySet Name="PERSONNE" EntityType="wikyModel.PERSONNE" />
+    <AssociationSet Name="FK_ARTICLE_PERSONNE" Association="wikyModel.FK_ARTICLE_PERSONNE">
+      <End Role="PERSONNE" EntitySet="PERSONNE" />
+      <End Role="ARTICLE" EntitySet="ARTICLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COMMENTAIRE_COMMENTAIRE" Association="wikyModel.FK_COMMENTAIRE_COMMENTAIRE">
+      <End Role="PERSONNE" EntitySet="PERSONNE" />
+      <End Role="COMMENTAIRE" EntitySet="COMMENTAIRE" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="PERSONNE">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ARTICLE" Relationship="wikyModel.FK_ARTICLE_PERSONNE" FromRole="PERSONNE" ToRole="ARTICLE" />
+    <NavigationProperty Name="COMMENTAIRE" Relationship="wikyModel.FK_COMMENTAIRE_COMMENTAIRE" FromRole="PERSONNE" ToRole="COMMENTAIRE" />
+  </EntityType>
+  <Association Name="FK_ARTICLE_PERSONNE">
+    <End Type="wikyModel.PERSONNE" Role="PERSONNE" Multiplicity="1" />
+    <End Type="wikyModel.ARTICLE" Role="ARTICLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONNE">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ARTICLE">
+        <PropertyRef Name="utilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COMMENTAIRE_COMMENTAIRE">
+    <End Type="wikyModel.PERSONNE" Role="PERSONNE" Multiplicity="1" />
+    <End Type="wikyModel.COMMENTAIRE" Role="COMMENTAIRE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONNE">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="COMMENTAIRE">
+        <PropertyRef Name="utilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

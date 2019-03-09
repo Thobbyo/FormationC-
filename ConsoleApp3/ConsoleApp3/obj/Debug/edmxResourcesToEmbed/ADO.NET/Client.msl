@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="exerciceLocationModelStoreContainer" CdmEntityContainer="exerciceLocationEntities">
+    <EntitySetMapping Name="CATEGORIE">
+      <EntityTypeMapping TypeName="exerciceLocationModel.CATEGORIE">
+        <MappingFragment StoreEntitySet="CATEGORIE">
+          <ScalarProperty Name="PRIX_KM" ColumnName="PRIX_KM" />
+          <ScalarProperty Name="LIBELLE" ColumnName="LIBELLE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="exerciceLocationModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="ville" ColumnName="ville" />
+          <ScalarProperty Name="code_postal" ColumnName="code_postal" />
+          <ScalarProperty Name="adresse" ColumnName="adresse" />
+          <ScalarProperty Name="Date_naissance" ColumnName="Date_naissance" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOUE">
+      <EntityTypeMapping TypeName="exerciceLocationModel.LOUE">
+        <MappingFragment StoreEntitySet="LOUE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VEHICULE" ColumnName="VEHICULE" />
+          <ScalarProperty Name="CLIENT" ColumnName="CLIENT" />
+          <ScalarProperty Name="DATE_FIN" ColumnName="DATE_FIN" />
+          <ScalarProperty Name="DATE_DEBUT" ColumnName="DATE_DEBUT" />
+          <ScalarProperty Name="NB_KM" ColumnName="NB_KM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marque">
+      <EntityTypeMapping TypeName="exerciceLocationModel.Marque">
+        <MappingFragment StoreEntitySet="Marque">
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VEHICULE">
+      <EntityTypeMapping TypeName="exerciceLocationModel.VEHICULE">
+        <MappingFragment StoreEntitySet="VEHICULE">
+          <ScalarProperty Name="CATEGORIE" ColumnName="CATEGORIE" />
+          <ScalarProperty Name="MARQUE" ColumnName="MARQUE" />
+          <ScalarProperty Name="DATE_MISE_EN_SERVICE" ColumnName="DATE_MISE_EN_SERVICE" />
+          <ScalarProperty Name="COULEUR" ColumnName="COULEUR" />
+          <ScalarProperty Name="IMMATRICULATION" ColumnName="IMMATRICULATION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
